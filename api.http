@@ -1,0 +1,16 @@
+POST http://localhost:3000/payments
+Content-Type: application/json
+
+{
+  "id": "2",
+  "amount": 30.50,
+  "currency": "USD"
+}
+
+###
+GET http://localhost:3000/payments
+Content-Type: application/json
+
+###
+GET http://localhost:3000/payments/1
+Content-Type: application/json
