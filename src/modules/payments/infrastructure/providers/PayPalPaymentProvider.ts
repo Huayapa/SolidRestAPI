@@ -1,4 +1,4 @@
-import type { Money } from "../../../../shared/domain/valueObjects/Money.ts";
+import type { Money } from "../../../../shared/money/domain/Money.ts";
 import type { IPaymentProvider, ProviderStatus } from "../../domain/ports/IPaymentProvider.ts";
 
 export class PayPalPaymentProvider implements IPaymentProvider {

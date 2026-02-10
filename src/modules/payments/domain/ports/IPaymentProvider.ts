@@ -1,4 +1,4 @@
-import type { Money } from "../../../../shared/domain/valueObjects/Money.ts";
+import type { Money } from "../../../../shared/money/domain/Money.ts";
 export type ProviderStatus = 'pending' | 'success' | 'failed'
 
 export interface IPaymentProvider {

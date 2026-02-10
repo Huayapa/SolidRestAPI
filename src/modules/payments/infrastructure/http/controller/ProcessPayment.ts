@@ -1,6 +1,6 @@
 import type { Request, Response } from "express"
 import { MakeProcessPayment } from "../../factories/MakeProcessPayment.ts"
-import { Currency, type AllowedCurrency } from "../../../../../shared/domain/valueObjects/Currency.ts"
+import { Currency, type AllowedCurrency } from "../../../../../shared/currency/domain/Currency.ts"
 
 export class ProcessPaymentController {
   static async run(req:Request, res:Response) {

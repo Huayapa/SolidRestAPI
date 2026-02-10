@@ -1,0 +1,1 @@
+export type AllowedCurrency = 'USD' | 'PE' | 'MX'

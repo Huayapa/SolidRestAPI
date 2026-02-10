@@ -1,4 +1,4 @@
-import { Money } from "../../../../shared/domain/valueObjects/Money.ts";
+import { Money } from "../../../../shared/money/domain/Money.ts";
 import type { PaymentStatus} from "../valueObjects/PaymentStatus.ts";
 
 export class Payment {
