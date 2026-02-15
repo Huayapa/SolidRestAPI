@@ -3,7 +3,7 @@ import { InvalidCurrencyError } from "./InvalidCurrencyError.ts"
 
 
 export class Currency {
-  private static readonly allowed: AllowedCurrency[] = ['USD', 'PE', 'MX']
+  private static readonly allowed: AllowedCurrency[] = ['USD', 'PEN', 'EUR']
   public readonly value:AllowedCurrency
 
   constructor(value:AllowedCurrency) {

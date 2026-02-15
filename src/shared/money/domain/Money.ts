@@ -24,10 +24,6 @@ export class Money {
   }
 
 
-  public convert(targetCurrency: Currency, rate: number) {
-    return new Money(this.amount * rate, targetCurrency)
-  }
-
   public isGreaterThan(otherMoney: Money) {
     if (!this.currency.equals(otherMoney.currency)) {
       throw new InvalidOpeationMoneyError('comparar')

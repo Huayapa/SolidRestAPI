@@ -1,5 +1,4 @@
 import dotenv from "dotenv";
-
 export const {
   PORT = 3000,
   DB_DRIVER = 'memory',
