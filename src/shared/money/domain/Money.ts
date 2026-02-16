@@ -1,7 +1,7 @@
 import  { Currency } from "../../currency/domain/Currency.ts"
 import type { AllowedCurrency } from "../../currency/domain/CurrencyTypes.ts"
 import { InvalidAmountMoneyError } from "./errors/InvalidAmountMoneyError.ts"
-import { InvalidOpeationMoneyError } from "./errors/InvalidOperationMoneyError.ts"
+import { InvalidOperationMoneyError } from "./errors/InvalidOperationMoneyError.ts"
 
 export class Money {
   public readonly amount: number
@@ -14,19 +14,20 @@ export class Money {
 
 
   public add(otherMoney:Money) {
-    if(!this.currency.equals(otherMoney.currency)) throw new InvalidOpeationMoneyError('sumar')
+    if(!this.currency.equals(otherMoney.currency)) throw new InvalidOperationMoneyError('sumar')
     return new Money(this.amount + otherMoney.amount, this.currency)
   }
   
   public substract(otherMoney:Money) {
-    if(!this.currency.equals(otherMoney.currency)) throw new InvalidOpeationMoneyError('restar')
+    if(!this.currency.equals(otherMoney.currency)) throw new InvalidOperationMoneyError('restar')
+    if(this.amount - otherMoney.amount < 0) throw new InvalidAmountMoneyError()
     return new Money(this.amount - otherMoney.amount, this.currency)
   }
 
 
   public isGreaterThan(otherMoney: Money) {
     if (!this.currency.equals(otherMoney.currency)) {
-      throw new InvalidOpeationMoneyError('comparar')
+      throw new InvalidOperationMoneyError('comparar')
     }
     return this.amount > otherMoney.amount
   }

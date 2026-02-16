@@ -4,7 +4,7 @@ import { Money } from "../../../domain/Money.ts";
 import { Currency } from "../../../../currency/domain/Currency.ts";
 import type { AllowedCurrency } from "../../../../currency/domain/CurrencyTypes.ts";
 
-export class ConverMoneyController {
+export class ConvertMoneyController {
   static async run(req: Request, res: Response) {
     try {
       const {amount, fromCurrency, toCurrency} = req.params
