@@ -11,6 +11,13 @@ export class Payment {
     this. status = status
   }
 
+  public retry():void {
+    this.status = this.status.retry()
+  }
+  public sync():void {
+    this.status.ensureCanSync()
+  }
+
   public processSuccess():void {
     this.status = this.status.complete()
   }

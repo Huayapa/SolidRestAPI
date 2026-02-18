@@ -1,3 +1,5 @@
+import { PaymentNotFoundError } from "../../domain/errors/PaymentNotFoundError.ts";
+import { ProviderPaymentStillPendingError } from "../../domain/errors/ProviderPaymentStillPendingError.ts";
 import type { IPaymentProvider } from "../../domain/ports/IPaymentProvider.ts";
 import type { IPaymentRepository } from "../../domain/ports/IPaymentRepository.ts";
 
@@ -11,16 +13,15 @@ export class SyncFailedPayment {
 
   async execute(id: string) {
     const payment = await this.PRepository.findById(id)
-    if(!payment) throw new Error('El pago no existe')
-    if(!payment.getStatus().isFailed()) throw new Error('Solo se pueden sincronizar pagos fallidos')
-
+    if(!payment) throw new PaymentNotFoundError(id)
+    payment.sync()
     const providerstatus = await this.PProvider.getStatus(payment.id)
     if(providerstatus === 'success') {
       payment.processSuccess()
       await this.PRepository.save(payment)
-      return payment.getSnapshot()
+    } else if(providerstatus === 'pending') {
+      throw new ProviderPaymentStillPendingError()
     }
-    if (providerstatus === 'pending') throw new Error('El pago sigue pendiente en el provider')
     return payment.getSnapshot()
   }
 }

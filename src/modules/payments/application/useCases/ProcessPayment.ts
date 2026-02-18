@@ -5,6 +5,7 @@ import type { IPaymentRepository } from "../../domain/ports/IPaymentRepository.t
 import type { IPaymentProvider } from "../../domain/ports/IPaymentProvider.ts";
 import { PaymentStatus} from "../../domain/valueObjects/PaymentStatus.ts";
 import type { AllowedCurrency } from "../../../../shared/currency/domain/CurrencyTypes.ts";
+import { PaymentAlReadyExistsError } from "../../domain/errors/PaymentAlReadyExistsError.ts";
 
 export class ProcessPayment {
   private PRepository: IPaymentRepository
@@ -17,7 +18,7 @@ export class ProcessPayment {
 
   async execute(id: string, amount: number, currency: AllowedCurrency) {
     const exists = await this.PRepository.findById(id)
-    if(exists) throw new Error('El pago ya existe')
+    if(exists) throw new PaymentAlReadyExistsError(id)
     
     const money: Money = new Money(amount, new Currency(currency))
     const status: PaymentStatus = PaymentStatus.createPending()

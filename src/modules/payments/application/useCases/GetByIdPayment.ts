@@ -1,3 +1,4 @@
+import { PaymentNotFoundError } from "../../domain/errors/PaymentNotFoundError.ts";
 import type { IPaymentRepository } from "../../domain/ports/IPaymentRepository.ts";
 
 export class GetByIdPayment {
@@ -8,7 +9,7 @@ export class GetByIdPayment {
 
   async execute(id: string) {
     const payment = await this.PRepository.findById(id)
-    if (!payment) throw new Error('Payment no encontrado')
+    if (!payment) throw new PaymentNotFoundError(id)
     return payment.getSnapshot()
   }
 }
