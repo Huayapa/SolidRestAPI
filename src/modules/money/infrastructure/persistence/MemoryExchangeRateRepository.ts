@@ -1,8 +1,7 @@
-import { Currency } from "../../../currency/domain/Currency.ts";
-import type { AllowedCurrency } from "../../../currency/domain/CurrencyTypes.ts";
-import { ExchangeRateNotFoundError } from "../../domain/errors/ExchangeRateNotFoundError.ts";
-import type { ExchangeRateRepository } from "../../domain/ports/ExchangeRateRepository.ts";
-
+import type { Currency } from "#currency/domain/Currency.ts"
+import type { AllowedCurrency } from "#currency/domain/CurrencyTypes.ts"
+import { ExchangeRateNotFoundError } from "#money/domain/errors/ExchangeRateNotFoundError.ts"
+import type { ExchangeRateRepository } from "#money/domain/ports/ExchangeRateRepository.ts"
 
 interface ExchangeRateRecord {
   from: AllowedCurrency,

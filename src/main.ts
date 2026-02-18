@@ -1,5 +1,6 @@
-import { loadEnv, PORT } from "./config/env.ts";
-import { startServer } from "./server.ts";
+import { loadEnv, PORT } from "#config/env.ts"
+import { startServer } from "./server.ts"
+
 
 
 

@@ -1,4 +1,4 @@
-import { PAYMENT_GATEWAY } from "../../../../config/env.ts";
+import { PAYMENT_GATEWAY } from "#config/env.ts";
 import { PayPalPaymentProvider } from "./PayPalPaymentProvider.ts";
 import { StripePaymentProvider } from "./StripePaymentProvider.ts";
 

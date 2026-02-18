@@ -1,7 +1,6 @@
 import type { AllowedCurrency } from "./CurrencyTypes.ts"
 import { InvalidCurrencyError } from "./InvalidCurrencyError.ts"
 
-
 export class Currency {
   private static readonly allowed: AllowedCurrency[] = ['USD', 'PEN', 'EUR']
   public readonly value:AllowedCurrency

@@ -1,6 +1,7 @@
-import { PaymentNotFoundError } from "../../domain/errors/PaymentNotFoundError.ts"
-import type { IPaymentProvider } from "../../domain/ports/IPaymentProvider.ts"
-import type { IPaymentRepository } from "../../domain/ports/IPaymentRepository.ts"
+import { PaymentNotFoundError } from "#payments/domain/errors/PaymentNotFoundError.ts"
+import type { IPaymentProvider } from "#payments/domain/ports/IPaymentProvider.ts"
+import type { IPaymentRepository } from "#payments/domain/ports/IPaymentRepository.ts"
+
 
 export class RetryFailedPayment {
   private PRepository: IPaymentRepository

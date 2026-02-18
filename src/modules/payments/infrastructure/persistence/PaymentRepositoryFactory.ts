@@ -1,4 +1,4 @@
-import { DB_DRIVER } from "../../../../config/env.ts";
+import { DB_DRIVER } from "#config/env.ts";
 import { memoryPaymentRepository } from "./memory/PaymentInstance.ts";
 
 export type DbDriver = 'memory';

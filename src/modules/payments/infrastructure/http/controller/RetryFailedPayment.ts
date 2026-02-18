@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import { MakeRetryFailedPayment } from "../../factories/MakeRetryFailedPayment.ts";
+import { MakeRetryFailedPayment } from "#payments/infrastructure/factories/MakeRetryFailedPayment.ts";
 
 export class RetryFailedPaymentController {
   static async run(req: Request, res: Response) {

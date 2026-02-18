@@ -1,4 +1,4 @@
-import { RetryFailedPayment } from "../../application/useCases/RetryFailedPayment.ts"
+import { RetryFailedPayment } from "#payments/application/useCases/RetryFailedPayment.ts"
 import { PaymentRepositoryFactory } from "../persistence/PaymentRepositoryFactory.ts"
 import { PaymentProviderFactory } from "../providers/PaymentProviderFactory.ts"
 

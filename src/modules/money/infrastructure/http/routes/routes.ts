@@ -1,5 +1,5 @@
 import express, { Router } from "express";
-import { ConvertMoneyController } from "../../../../../modules/money/infrastructure/http/controller/ConvertMoney.ts";
+import { ConvertMoneyController } from "#money/infrastructure/http/controller/ConvertMoney.ts";
 
 export const moneyRoutes:Router = express.Router()
 

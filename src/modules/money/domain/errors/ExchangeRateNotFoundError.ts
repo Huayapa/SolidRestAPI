@@ -1,5 +1,6 @@
-import type { Currency } from "../../../../modules/currency/domain/Currency.ts";
-import { DomainError } from "../../../../shared/errors/DomainError.ts";
+import type { Currency } from "#currency/domain/Currency.ts"
+import { DomainError } from "#shared/errors/DomainError.ts"
+
 
 
 export class ExchangeRateNotFoundError extends DomainError {

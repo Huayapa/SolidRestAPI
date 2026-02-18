@@ -1,8 +1,8 @@
 
 import express from "express"
 import type { Express } from 'express';
-import { paymentRoutes } from "./modules/payments/infrastructure/http/routes/routes.ts"
-import { moneyRoutes } from "./modules/money/infrastructure/http/routes/routes.ts";
+import { paymentRoutes } from "#payments/infrastructure/http/routes/routes.ts"
+import { moneyRoutes } from "#money/infrastructure/http/routes/routes.ts";
 
 
 export function startServer():Express {

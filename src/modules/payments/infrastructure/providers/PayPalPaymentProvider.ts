@@ -1,5 +1,6 @@
-import type { Money } from "../../../../shared/money/domain/Money.ts";
-import type { IPaymentProvider, ProviderStatus } from "../../domain/ports/IPaymentProvider.ts";
+import type { Money } from "#money/domain/Money.ts";
+import type { IPaymentProvider, ProviderStatus } from "#payments/domain/ports/IPaymentProvider.ts";
+
 
 export class PayPalPaymentProvider implements IPaymentProvider {
   async process(money: Money): Promise<boolean> {

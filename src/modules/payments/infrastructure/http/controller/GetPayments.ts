@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import { MakeGetPayments } from "../../factories/MakeGetPayments.ts";
+import { MakeGetPayments } from "#payments/infrastructure/factories/MakeGetPayments.ts";
 
 export class GetPaymentsController {
   static async run(req:Request, res:Response) {

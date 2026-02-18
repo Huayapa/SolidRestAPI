@@ -1,5 +1,6 @@
-import { Money } from "../../../../shared/money/domain/Money.ts";
-import type { PaymentStatus} from "../valueObjects/PaymentStatus.ts";
+import { Money } from "#money/domain/Money.ts";
+import type { PaymentStatus } from "../valueObjects/PaymentStatus.ts";
+
 
 export class Payment {
   public readonly id: string

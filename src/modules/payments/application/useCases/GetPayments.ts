@@ -1,4 +1,5 @@
-import type { IPaymentRepository } from "../../domain/ports/IPaymentRepository.ts";
+import type { IPaymentRepository } from "#payments/domain/ports/IPaymentRepository.ts"
+
 
 export class GetPayments {
   private PRepository: IPaymentRepository

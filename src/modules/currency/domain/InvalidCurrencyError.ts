@@ -1,6 +1,5 @@
-
-import type { AllowedCurrency } from "../../../modules/currency/domain/CurrencyTypes.ts";
-import { DomainError } from "../../../shared/errors/DomainError.ts";
+import { DomainError } from "#shared/errors/DomainError.ts";
+import type { AllowedCurrency } from "./CurrencyTypes.ts";
 
 export class InvalidCurrencyError extends DomainError {
   readonly code: string = 'INVALID_CURRENCY_ERROR'

@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import { MakeSyncFailedPayment } from "../../factories/MakeSyncFailedPayment.ts";
+import { MakeSyncFailedPayment } from "#payments/infrastructure/factories/MakeSyncFailedPayment.ts";
 
 export class SyncFailedPaymentController {
   static async run(req:Request, res:Response) {

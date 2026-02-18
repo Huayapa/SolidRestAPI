@@ -1,5 +1,6 @@
+import { MakeCancelProcessPayment } from "#payments/infrastructure/factories/MakeCancelProcessPayment.ts";
 import type { Request, Response } from "express";
-import { MakeCancelProcessPayment } from "../../factories/MakeCancelProcessPayment.ts";
+
 
 export class CancelPaymentController {
   static async run(req: Request, res: Response) {

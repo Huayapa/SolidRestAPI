@@ -1,4 +1,4 @@
-import { CancelProcessPayment } from "../../application/useCases/CancelProcessPayment.ts"
+import { CancelProcessPayment } from "#payments/application/useCases/CancelProcessPayment.ts"
 import { PaymentRepositoryFactory } from "../persistence/PaymentRepositoryFactory.ts"
 import { PaymentProviderFactory } from "../providers/PaymentProviderFactory.ts"
 

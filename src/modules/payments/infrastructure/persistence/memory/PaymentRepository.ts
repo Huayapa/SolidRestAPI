@@ -1,5 +1,5 @@
-import { Payment } from "../../../domain/entities/Payment.ts";
-import type { IPaymentRepository } from "../../../domain/ports/IPaymentRepository.ts";
+import type { Payment } from "#payments/domain/entities/Payment.ts"
+import type { IPaymentRepository } from "#payments/domain/ports/IPaymentRepository.ts"
 
 export class MemoryPaymentRepository implements IPaymentRepository {
   private static db: Payment[] = []

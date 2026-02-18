@@ -1,5 +1,6 @@
 import { InvalidPaymentStatusTransitionError } from "../errors/InvalidPaymentStatusTransitionError.ts"
 
+
 export type StatusType = 'pending' | 'completed' | 'failed' | 'cancelled'
 export class PaymentStatus {
   public readonly value: StatusType

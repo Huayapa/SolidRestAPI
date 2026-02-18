@@ -1,5 +1,6 @@
+import { MakeGetByIdPayments } from "#payments/infrastructure/factories/MakeGetByIdPayment.ts"
 import type { Request, Response } from "express"
-import { MakeGetByIdPayments } from "../../factories/MakeGetByIdPayment.ts"
+
 
 export class GetByIdPaymentController {
   static async run(req: Request, res: Response) {

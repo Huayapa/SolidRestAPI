@@ -1,8 +1,9 @@
 import type { Request, Response } from "express";
-import { MakeConvertMoney } from "../../factories/MakeConvertMoney.ts";
-import { Money } from "../../../domain/Money.ts";
-import { Currency } from "../../../../currency/domain/Currency.ts";
-import type { AllowedCurrency } from "../../../../currency/domain/CurrencyTypes.ts";
+
+import { Money } from "#money/domain/Money.ts";
+import { MakeConvertMoney } from "#money/infrastructure/factories/MakeConvertMoney.ts";
+import type { AllowedCurrency } from "#currency/domain/CurrencyTypes.ts";
+import { Currency } from "#currency/domain/Currency.ts";
 
 export class ConvertMoneyController {
   static async run(req: Request, res: Response) {

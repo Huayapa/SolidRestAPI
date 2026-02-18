@@ -1,4 +1,4 @@
-import { GetByIdPayment } from "../../application/useCases/GetByIdPayment.ts";
+import { GetByIdPayment } from "#payments/application/useCases/GetByIdPayment.ts";
 import { PaymentRepositoryFactory } from "../persistence/PaymentRepositoryFactory.ts";
 
 export function MakeGetByIdPayments() {

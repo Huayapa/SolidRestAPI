@@ -1,4 +1,4 @@
-import { DomainError } from "../../../../shared/errors/DomainError.ts";
+import { DomainError } from "#shared/errors/DomainError.ts";
 
 type operationtype = 'sumar' | 'restar' | 'multiplicar' | 'dividir' | 'comparar'
 export class InvalidOperationMoneyError extends DomainError {

@@ -1,6 +1,6 @@
-import { ConvertMoney } from "../../application/useCases/ConvertMoney.ts";
-import { MoneyConvert } from "../../domain/services/MoneyConvert.ts";
-import { MoneyRepositoryFactory } from "../persistence/MoneyRepositoryFactory.ts";
+import { ConvertMoney } from "#money/application/useCases/ConvertMoney.ts";
+import { MoneyConvert } from "#money/domain/services/MoneyConvert.ts";
+import { MoneyRepositoryFactory } from "#money/infrastructure/persistence/MoneyRepositoryFactory.ts";
 
 export function MakeConvertMoney() {
   const exchangeRateRepository  = MoneyRepositoryFactory.create()

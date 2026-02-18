@@ -1,4 +1,4 @@
-import { SyncFailedPayment } from "../../application/useCases/SyncFailedPayment.ts"
+import { SyncFailedPayment } from "#payments/application/useCases/SyncFailedPayment.ts"
 import { PaymentRepositoryFactory } from "../persistence/PaymentRepositoryFactory.ts"
 import { PaymentProviderFactory } from "../providers/PaymentProviderFactory.ts"
 

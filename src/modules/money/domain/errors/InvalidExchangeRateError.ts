@@ -1,4 +1,4 @@
-import { DomainError } from "../../../../shared/errors/DomainError.ts";
+import { DomainError } from "#shared/errors/DomainError.ts";
 
 export class InvalidExchangeRateError extends DomainError {
   readonly code:string = 'INVALID_EXCHANGE_RATE_ERROR'

@@ -1,9 +1,16 @@
 {
-  "name": "paymentSolidAPI",
+  "name": "solidRESTAPI",
   "version": "1.0.0",
   "description": "",
   "main": "main.ts",
   "type": "module",
+  "imports": {
+    "#money/*": "./src/modules/money/*",
+    "#payments/*": "./src/modules/payments/*",
+    "#currency/*": "./src/modules/currency/*",
+    "#shared/*": "./src/shared/*",
+    "#config/*": "./src/config/*"
+  },
   "scripts": {
     "dev": "node --watch --inspect --experimental-strip-types src/main.ts",
     "build": "tsc",

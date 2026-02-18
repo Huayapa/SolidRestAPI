@@ -1,4 +1,4 @@
-import { DomainError } from "../../../../shared/errors/DomainError.ts";
+import { DomainError } from "#shared/errors/DomainError.ts";
 
 export class PaymentAlReadyExistsError extends DomainError {
   readonly code:string = 'PAYMENT_AL_READY_EXISTS'

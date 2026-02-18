@@ -1,7 +1,7 @@
-import  { Currency } from "../../../modules/currency/domain/Currency.ts"
-import type { AllowedCurrency } from "../../../modules/currency/domain/CurrencyTypes.ts"
-import { InvalidAmountMoneyError } from "./errors/InvalidAmountMoneyError.ts"
-import { InvalidOperationMoneyError } from "./errors/InvalidOperationMoneyError.ts"
+import  { Currency } from "#currency/domain/Currency.ts"
+import type { AllowedCurrency } from "#currency/domain/CurrencyTypes.ts"
+import { InvalidAmountMoneyError } from "#money/domain/errors/InvalidAmountMoneyError.ts"
+import { InvalidOperationMoneyError } from "#money/domain/errors/InvalidOperationMoneyError.ts"
 
 export class Money {
   public readonly amount: number

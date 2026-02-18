@@ -1,6 +1,6 @@
-import { ProcessPayment } from "../../application/useCases/ProcessPayment.ts";
 import { PaymentProviderFactory } from "../providers/PaymentProviderFactory.ts";
 import { PaymentRepositoryFactory } from "../persistence/PaymentRepositoryFactory.ts";
+import { ProcessPayment } from "#payments/application/useCases/ProcessPayment.ts";
 
 export function MakeProcessPayment() {
   const repository = PaymentRepositoryFactory.create()

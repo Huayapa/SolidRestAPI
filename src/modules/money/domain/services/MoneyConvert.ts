@@ -1,7 +1,7 @@
-import type { Currency } from "../../../currency/domain/Currency.ts";
-import { InvalidExchangeRateError } from "../errors/InvalidExchangeRateError.ts";
-import { Money } from "../Money.ts";
-import type { ExchangeRateRepository } from "../ports/ExchangeRateRepository.ts";
+import type { Currency } from "#currency/domain/Currency.ts";
+import { InvalidExchangeRateError } from "#money/domain/errors/InvalidExchangeRateError.ts";
+import { Money } from "#money/domain/Money.ts";
+import type { ExchangeRateRepository } from "#money/domain/ports/ExchangeRateRepository.ts";
 
 export class MoneyConvert {
   private readonly exchangeRateRepository: ExchangeRateRepository
