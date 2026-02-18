@@ -1,4 +1,4 @@
-import type { Currency } from "../../../currency/domain/Currency.ts";
+import type { Currency } from "../../../../modules/currency/domain/Currency.ts";
 import type { Money } from "../../domain/Money.ts";
 import type { MoneyConvert } from "../../domain/services/MoneyConvert.ts";
 

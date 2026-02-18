@@ -1,10 +1,10 @@
-import { Currency} from "../../../../shared/currency/domain/Currency.ts";
+import { Currency} from "../../../currency/domain/Currency.ts";
 import { Money } from "../../../../shared/money/domain/Money.ts";
 import { Payment } from "../../domain/entities/Payment.ts";
 import type { IPaymentRepository } from "../../domain/ports/IPaymentRepository.ts";
 import type { IPaymentProvider } from "../../domain/ports/IPaymentProvider.ts";
 import { PaymentStatus} from "../../domain/valueObjects/PaymentStatus.ts";
-import type { AllowedCurrency } from "../../../../shared/currency/domain/CurrencyTypes.ts";
+import type { AllowedCurrency } from "../../../currency/domain/CurrencyTypes.ts";
 import { PaymentAlReadyExistsError } from "../../domain/errors/PaymentAlReadyExistsError.ts";
 
 export class ProcessPayment {
