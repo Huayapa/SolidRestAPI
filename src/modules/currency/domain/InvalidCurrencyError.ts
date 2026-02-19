@@ -1,4 +1,4 @@
-import { DomainError } from "#shared/errors/DomainError.ts";
+import { DomainError } from "#shared/domain/errors/DomainError.ts";
 import type { AllowedCurrency } from "./CurrencyTypes.ts";
 
 export class InvalidCurrencyError extends DomainError {

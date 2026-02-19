@@ -1,4 +1,4 @@
-import { DomainError } from "#shared/errors/DomainError.ts";
+import { DomainError } from "#shared/domain/errors/DomainError.ts"
 
 export class InvalidPaymentStatusTransitionError extends DomainError {
   readonly code:string = 'INVALID_PAYMENT_STATUS_TRANSITION'

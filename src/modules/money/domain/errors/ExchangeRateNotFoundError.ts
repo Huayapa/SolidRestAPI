@@ -1,5 +1,5 @@
 import type { Currency } from "#currency/domain/Currency.ts"
-import { DomainError } from "#shared/errors/DomainError.ts"
+import { DomainError } from "#shared/domain/errors/DomainError.ts"
 
 
 
