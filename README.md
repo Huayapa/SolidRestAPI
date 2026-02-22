@@ -4,6 +4,8 @@ Una API de procesamiento de pagos diseñada para demostrar los **principios SOLI
 
 ## Modulos actuales
 - Pagos
+- Dinero (Conversión de divisas)
+- Divisas (Tipos de cambio)
 
 ## Descripción del Proyecto
 
@@ -98,14 +100,45 @@ export class ProcessPayment {
 ## Estructura del Proyecto
 
 ```
-paymentSolidAPI/
+SolidRestAPI/
 ├── src/
 │   ├── main.ts                          # Punto de entrada
 │   ├── server.ts                        # Configuración del servidor
 │   ├── config/
 │   │   └── env.ts                       # Variables de entorno
 │   ├── modules/
-│   │   └── payments/
+│   │   ├── currency/                    # Módulo de divisas
+│   │   │   └── domain/
+│   │   │       ├── Currency.ts
+│   │   │       ├── CurrencyTypes.ts
+│   │   │       └── InvalidCurrencyError.ts
+│   │   ├── money/                       # Módulo de dinero y conversión
+│   │   │   ├── application/
+│   │   │   │   └── useCases/
+│   │   │   │       └── ConvertMoney.ts
+│   │   │   ├── domain/
+│   │   │   │   ├── Money.ts
+│   │   │   │   ├── errors/
+│   │   │   │   │   ├── ExchangeRateNotFoundError.ts
+│   │   │   │   │   ├── InvalidAmountMoneyError.ts
+│   │   │   │   │   ├── InvalidExchangeRateError.ts
+│   │   │   │   │   └── InvalidOperationMoneyError.ts
+│   │   │   │   ├── ports/
+│   │   │   │   │   └── ExchangeRateRepository.ts
+│   │   │   │   └── services/
+│   │   │   │       └── MoneyConvert.ts
+│   │   │   └── infrastructure/
+│   │   │       ├── factories/
+│   │   │       │   └── MakeConvertMoney.ts
+│   │   │       ├── http/
+│   │   │       │   ├── controller/
+│   │   │       │   │   └── ConvertMoney.ts
+│   │   │       │   └── routes/
+│   │   │       │       └── routes.ts
+│   │   │       └── persistence/
+│   │   │           ├── MemoryExchangeRateRepository.ts
+│   │   │           └── MoneyRepositoryFactory.ts
+│   │   └── payments/                    # Módulo de pagos
 │   │       ├── application/
 │   │       │   └── useCases/
 │   │       │       ├── ProcessPayment.ts
@@ -117,6 +150,11 @@ paymentSolidAPI/
 │   │       ├── domain/
 │   │       │   ├── entities/
 │   │       │   │   └── Payment.ts
+│   │       │   ├── errors/
+│   │       │   │   ├── InvalidPaymentStatusTransitionError.ts
+│   │       │   │   ├── PaymentAlReadyExistsError.ts
+│   │       │   │   ├── PaymentNotFoundError.ts
+│   │       │   │   └── ProviderPaymentStillPendingError.ts
 │   │       │   ├── ports/
 │   │       │   │   ├── IPaymentProvider.ts
 │   │       │   │   └── IPaymentRepository.ts
@@ -128,13 +166,27 @@ paymentSolidAPI/
 │   │           │   ├── controller/      # HTTP Handlers
 │   │           │   └── routes/          # Definición de rutas
 │   │           ├── persistence/         # Repositorios
+│   │           │   ├── PaymentRepositoryFactory.ts
+│   │           │   └── memory/
+│   │           │       ├── PaymentInstance.ts
+│   │           │       └── PaymentRepository.ts
 │   │           └── providers/           # Proveedores de pago
-│   └── shared/
-│       └── domain/valueObjects/
-│           ├── Currency.ts
-│           └── Money.ts
+│   │               ├── PaymentProviderFactory.ts
+│   │               ├── PayPalPaymentProvider.ts
+│   │               └── StripePaymentProvider.ts
+│   └── shared/                          # Código compartido
+│       └── domain/
+│           ├── errors/
+│           │   └── DomainError.ts
+│           └── infrastructure/
+│               └── http/
+│                   ├── errorDictionary.ts
+│                   ├── errorHandler.ts
+│                   └── httpError.ts
 ├── package.json
 ├── tsconfig.json
+├── pnpm-lock.yaml
+├── api.http
 └── README.md
 ```
 
@@ -195,12 +247,12 @@ pnpm start
 
 ## Cambios pendientes
 
-- [ ] Error Handling
+- [x] Error Handling
 - [ ] Testing
-- [ ] Crear otros modulos
+- [x] Crear otros modulos
 
 ## Licencia
 
 ISC
 **Autor**: Josue Andres Huayapa Julca
-**Última actualización**: 4 de febrero de 2026
+**Última actualización**: 21 de febrero de 2026
